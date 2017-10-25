@@ -9,3 +9,4 @@
 let jeux = Game()
 jeux.welcome()
 jeux.initializeGame()
+jeux.fight()
