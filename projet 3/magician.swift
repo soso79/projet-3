@@ -42,7 +42,7 @@ class Magician: GameCharacters {
     
         func selectCharacter(team:[GameCharacters])-> GameCharacters{
             var characterIndex = 0
-            var character = GameCharacters(name: "")
+            let character = GameCharacters(name: "")
             
             print("selectionnez un personnage")
             for character in team{

@@ -15,6 +15,9 @@ class Game {
         
     }
     func fight(){
+        
+        
+        
         let combattant = players[0].selectCharacter()
         if let magicien = combattant as? Magician{
             print("Le personnage est un magicien")
@@ -23,12 +26,12 @@ class Game {
                 print("le magicien va attaquer")
                // on va demander au joueur de selectionner un personage de l equipe adverse a attaquer //
                 
-            print("selectionnez un personnage a attaquer")
+            
                 
                 let ennemy = players[1].selectCharacter()
                 magicien.attack(ennemy: ennemy)
                 print("\(combattant.name) a attaqué \(ennemy.name)")
-                
+                print(" il reste \(ennemy.life) points de vie")
                 
                 
                 }else if action == 2{
@@ -44,24 +47,85 @@ class Game {
                 
                 
                 
-            }else{
-                print("je nai pas compris")
             }
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }else{
-            print("le personnage n est pas un magicien")
+            
             
             
             // on va demander au joueur de selectionner un persoonage de l equipe adverse a attaquer //
             
-            
-            
-            //le magicien va attaquer le personnage  adverse //
-            
+            if let nain = combattant as? Midget{
+                print("Le personnage est un nain")
+                let action = nain.selectAction()
+                if action == 1{
+                    print("le nain va attaquer")
+                    // on va demander au joueur de selectionner un personage de l equipe adverse a attaquer //
+                    
+                    
+                    
+                    let ennemy = players[1].selectCharacter()
+                    nain.attack(ennemy: ennemy)
+                    print("\(combattant.name) a attaqué \(ennemy.name)")
+                    print(" il reste \(ennemy.life) points de vie")
+           
         }
         
         
     }
     
+        }
+            
+        if let guerrier = combattant as? Warrior{
+            print("Le personnage est un guerrier")
+            let action = guerrier.selectAction()
+            if action == 1{
+                print("le guerrier va attaquer")
+                // on va demander au joueur de selectionner un personage de l equipe adverse a attaquer //
+                
+                
+                
+                let ennemy = players[1].selectCharacter()
+                guerrier.attack(ennemy: ennemy)
+                print("\(combattant.name) a attaqué \(ennemy.name)")
+                print(" il reste \(ennemy.life) points de vie")
+                
+            }
+            
+            
+        }
+
+        if let colosse = combattant as? Colossus{
+            print("Le personnage est un colosse")
+            let action = colosse.selectAction()
+            if action == 1{
+                print("le colosse va attaquer")
+                // on va demander au joueur de selectionner un personage de l equipe adverse a attaquer //
+                
+                print("selectionnez un personnage a attaquer")
+                
+                let ennemy = players[1].selectCharacter()
+                colosse.attack(ennemy: ennemy)
+                print("\(combattant.name) a attaqué \(ennemy.name)")
+                print(" il reste \(ennemy.life) points de vie")
+                
+            }
+            
+            
+        }
+        
+    
+        
+    
+    
+    }
+
 }
-
-

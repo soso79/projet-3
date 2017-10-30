@@ -17,6 +17,9 @@ class GameCharacters {
     
     func attack(ennemy: GameCharacters) {
         ennemy.life = ennemy.life - self.strenght
+        if ennemy.life < 0 {
+            ennemy.life = 0
+        }
     
     }
     

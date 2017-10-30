@@ -12,7 +12,7 @@ class GamePlayers {
     //la fonction createTeam va inviter le joueur a choisir les personnages de son équipe
     func createTeam(players:[GamePlayers]){
         repeat {
-            print("Joueur \(playerNumber) veuillez choisir un personnage parmis les types suivant\n 1.combattant 2.magicien 3.nain 4.colosse")
+            print("Joueur \(playerNumber) veuillez choisir un personnage parmis les types suivant\n 1.guerrier 2.magicien 3.nain 4.colosse")
             let userchoice = readLine()
             if let choice = Int(userchoice!) {
                 switch choice {
