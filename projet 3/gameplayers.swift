@@ -22,7 +22,6 @@ class GamePlayers {
                     if let character = characterName {
                         if !checkNameUsed(personnageName: character,players: players){
                             let combattant = Warrior(name: character)
-                            combattant.weapon = Epee()
                             combattant.life = 30
                             teamCharacters.append(combattant)
                             print("personnage ajouté")
@@ -38,7 +37,7 @@ class GamePlayers {
                         let combattant = Magician(name: character)
                         teamCharacters.append(combattant)
                         combattant.life = 20
-                        combattant.weapon = Potion()
+                        
                     }
                         
                     }
@@ -52,7 +51,7 @@ class GamePlayers {
                         let combattant = Midget(name: character)
                         teamCharacters.append(combattant)
                         combattant.life = 20
-                        combattant.weapon = Hache()
+                        
                     }
                         
                     }
@@ -66,7 +65,7 @@ class GamePlayers {
                         let combattant = Colossus(name: character)
                         teamCharacters.append(combattant)
                         combattant.life = 20
-                        combattant.weapon = Marteau()
+                        
                         
                     }
                     

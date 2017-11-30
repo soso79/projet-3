@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FDB283C1F710147007BE179 /* marteau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB283B1F710147007BE179 /* marteau.swift */; };
-		0FDB283E1F710177007BE179 /* hache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB283D1F710177007BE179 /* hache.swift */; };
-		0FDB28401F7101A8007BE179 /* epee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB283F1F7101A8007BE179 /* epee.swift */; };
 		0FDB28421F7101D7007BE179 /* potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB28411F7101D7007BE179 /* potion.swift */; };
 		0FE6A1B11F699EC700DE7589 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE6A1B01F699EC700DE7589 /* main.swift */; };
 		0FE6A1B81F699F1300DE7589 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE6A1B71F699F1300DE7589 /* game.swift */; };
@@ -35,9 +32,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0FDB283B1F710147007BE179 /* marteau.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = marteau.swift; sourceTree = "<group>"; };
-		0FDB283D1F710177007BE179 /* hache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hache.swift; sourceTree = "<group>"; };
-		0FDB283F1F7101A8007BE179 /* epee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = epee.swift; sourceTree = "<group>"; };
 		0FDB28411F7101D7007BE179 /* potion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = potion.swift; sourceTree = "<group>"; };
 		0FE6A1AD1F699EC700DE7589 /* projet 3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "projet 3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE6A1B01F699EC700DE7589 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -62,6 +56,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FB4EF091FBDE1D20024F5C0 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				0FFBB8D51F6C58CD00A60E6D /* weapon.swift */,
+				0FDB28411F7101D7007BE179 /* potion.swift */,
+			);
+			path = Weapons;
+			sourceTree = "<group>";
+		};
+		0FB4EF0A1FBDE2100024F5C0 /* gamecharacters */ = {
+			isa = PBXGroup;
+			children = (
+				0FFBB8D31F6C589F00A60E6D /* colossus.swift */,
+				0FFBB8D71F6C58FE00A60E6D /* midget.swift */,
+				0FFBB8DB1F6C594800A60E6D /* warrior.swift */,
+				0FFBB8D91F6C592000A60E6D /* magician.swift */,
+			);
+			path = gamecharacters;
+			sourceTree = "<group>";
+		};
 		0FE6A1A41F699EC700DE7589 = {
 			isa = PBXGroup;
 			children = (
@@ -85,15 +99,8 @@
 				0FE6A1B71F699F1300DE7589 /* game.swift */,
 				0FFBB8CF1F6C580200A60E6D /* gamecharacters.swift */,
 				0FFBB8D11F6C583600A60E6D /* gameplayers.swift */,
-				0FFBB8D31F6C589F00A60E6D /* colossus.swift */,
-				0FFBB8D51F6C58CD00A60E6D /* weapon.swift */,
-				0FDB283B1F710147007BE179 /* marteau.swift */,
-				0FDB283D1F710177007BE179 /* hache.swift */,
-				0FDB283F1F7101A8007BE179 /* epee.swift */,
-				0FDB28411F7101D7007BE179 /* potion.swift */,
-				0FFBB8D71F6C58FE00A60E6D /* midget.swift */,
-				0FFBB8D91F6C592000A60E6D /* magician.swift */,
-				0FFBB8DB1F6C594800A60E6D /* warrior.swift */,
+				0FB4EF091FBDE1D20024F5C0 /* Weapons */,
+				0FB4EF0A1FBDE2100024F5C0 /* gamecharacters */,
 			);
 			path = "projet 3";
 			sourceTree = "<group>";
@@ -157,18 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FDB28401F7101A8007BE179 /* epee.swift in Sources */,
 				0FFBB8D41F6C589F00A60E6D /* colossus.swift in Sources */,
 				0FE6A1B11F699EC700DE7589 /* main.swift in Sources */,
 				0FFBB8DA1F6C592000A60E6D /* magician.swift in Sources */,
-				0FDB283C1F710147007BE179 /* marteau.swift in Sources */,
 				0FFBB8D01F6C580200A60E6D /* gamecharacters.swift in Sources */,
 				0FDB28421F7101D7007BE179 /* potion.swift in Sources */,
 				0FFBB8D81F6C58FE00A60E6D /* midget.swift in Sources */,
 				0FFBB8D61F6C58CD00A60E6D /* weapon.swift in Sources */,
 				0FFBB8D21F6C583600A60E6D /* gameplayers.swift in Sources */,
 				0FE6A1B81F699F1300DE7589 /* game.swift in Sources */,
-				0FDB283E1F710177007BE179 /* hache.swift in Sources */,
 				0FFBB8DC1F6C594800A60E6D /* warrior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

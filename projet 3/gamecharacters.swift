@@ -4,19 +4,19 @@ class GameCharacters {
     
     var name: String = ""
     var life: Int
-    var strenght: Int
-    
+    var magic : Int
+    var weapon : Weapon
         
     init(name: String ) {
         self.name = name
         self.life = 100
-        self.strenght = 10
-        
+        self.weapon = Weapon(name: "hands", degats: 1)
+        self.magic = 0
         
     }
     
     func attack(ennemy: GameCharacters) {
-        ennemy.life = ennemy.life - self.strenght
+        ennemy.life = ennemy.life - self.weapon.degats
         if ennemy.life < 0 {
             ennemy.life = 0
         }

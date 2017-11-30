@@ -1,14 +1,13 @@
 class Magician: GameCharacters {
-    var weapon : Weapon
+    
     
     override init(name: String) {
-        weapon = Potion()
         super.init(name : name)
-        
+        weapon = Weapon(name: "potion",  degats: 35)
         
     }
      func health(teamates: GameCharacters) {
-        teamates.life = teamates.life + self.strenght
+        teamates.life = teamates.life + self.weapon.degats
         
     }
     func selectAction()->Int {
