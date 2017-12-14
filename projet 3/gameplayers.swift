@@ -1,5 +1,5 @@
 
-// Les personnes qui jouent au jeu
+// People play the game
 
 
 class GamePlayers {
@@ -9,7 +9,7 @@ class GamePlayers {
         self.playerNumber = number
         
     }
-    //la fonction createTeam va inviter le joueur a choisir les personnages de son équipe
+    //This function allow the player to choose the caracter to make the team
     func createTeam(players:[GamePlayers]){
         repeat {
             print("Joueur \(playerNumber) veuillez choisir un personnage parmis les types suivant\n 1.guerrier 2.magicien 3.nain 4.colosse")
@@ -22,7 +22,7 @@ class GamePlayers {
                     if let character = characterName {
                         if !checkNameUsed(personnageName: character,players: players){
                             let combattant = Warrior(name: character)
-                            combattant.life = 30
+                            combattant.life = 100
                             teamCharacters.append(combattant)
                             print("personnage ajouté")
                         }
@@ -36,7 +36,7 @@ class GamePlayers {
                         if !checkNameUsed(personnageName: character,players: players){
                         let combattant = Magician(name: character)
                         teamCharacters.append(combattant)
-                        combattant.life = 20
+                        combattant.life = 100
                         
                     }
                         
@@ -50,7 +50,7 @@ class GamePlayers {
                         if !checkNameUsed(personnageName: character,players: players){
                         let combattant = Midget(name: character)
                         teamCharacters.append(combattant)
-                        combattant.life = 20
+                        combattant.life = 100
                         
                     }
                         
@@ -64,7 +64,7 @@ class GamePlayers {
                         if !checkNameUsed(personnageName: character,players: players){
                         let combattant = Colossus(name: character)
                         teamCharacters.append(combattant)
-                        combattant.life = 20
+                        combattant.life = 100
                         
                         
                     }
@@ -75,10 +75,7 @@ class GamePlayers {
                 default:
                     print ("Recommencez")
                     
-                    
-                    
-                }
-                
+            }
                 
             } else {
                 print("je n ai pas compris")
@@ -90,7 +87,6 @@ class GamePlayers {
     func checkNameUsed(personnageName: String,players:[GamePlayers])->Bool {  // fonction qui permet de comparer les noms //
         for player in players{
             for character in player.teamCharacters {
-                
                 if personnageName.uppercased() == character.name.uppercased() {
                     print("Ce nom est deja pris")
                     return true
@@ -101,26 +97,16 @@ class GamePlayers {
         return false
     }
     
-    func play(player: GamePlayers) {
-        // selection du personnage de l equipe //
-        
-        
-        
-        // Choisir un personnage de l'équipe adverse à attaquer ou un personnage de sa propre équipe à soigner dans le cas du Mage.//
-        
-        
-        
-    } // permet de selectionner un personnage dans la liste team
+    // select caracter in the teamlist
     func selectCharacter()-> GameCharacters{
         var characterIndex = 0
-        var character = GameCharacters(name: "")
-        
+        var character = GameCharacters(name:"")
         print("selectionnez un personnage")
         for character in teamCharacters{
             characterIndex += 1
-            print("\(characterIndex)- \(character.name)")
+            print("\(characterIndex)- \(character.name)- \(character.life) points de vie - inflige \(character.weapon.dammages) dégats ")
         }
-        // on va demander a l utilisateur de rentrer un numéro de personnage de la liste
+        // select characternumber in the teamlist
         print("Veuillez selectionner un numéro de personnage")
         var validChoice = false
         repeat {
@@ -151,23 +137,12 @@ class GamePlayers {
                 }
                 
             }
-        }while validChoice == false
-        
-        
+         }while validChoice == false
     
-        // on va analyser la réponse donnée : si c est 1 2 3 on renvoi le personnage selectionné sinon on demande une nouvelle fois a l utilisateur de choisir un nombre entre 1 2 3
+        // If the choice is 1,2,3 return the select character and if the choice is not 1,2,3 return "recommencez"
     
         
-
-        
-        
-        
-        
-            
-        
-        
-        
-        // on renvoi le character selctionné
+        // we return the select character
         return character
         
     

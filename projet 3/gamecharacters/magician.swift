@@ -3,11 +3,11 @@ class Magician: GameCharacters {
     
     override init(name: String) {
         super.init(name : name)
-        weapon = Weapon(name: "potion",  degats: 35)
+        weapon = Weapon(name: "potion",  dammages: 35)
         
     }
      func health(teamates: GameCharacters) {
-        teamates.life = teamates.life + self.weapon.degats
+        teamates.life = teamates.life + self.weapon.dammages
         
     }
     func selectAction()->Int {
@@ -39,16 +39,6 @@ class Magician: GameCharacters {
        
     }
     
-        func selectCharacter(team:[GameCharacters])-> GameCharacters{
-            var characterIndex = 0
-            let character = GameCharacters(name: "")
-            
-            print("selectionnez un personnage")
-            for character in team{
-                characterIndex += 1
-                print("\(characterIndex)- \(character.name)")
-            }
-            return character
-}
+        
     
 }

@@ -6,8 +6,8 @@
 //  Copyright © 2017 sofiane bahri. All rights reserved.
 //
 
-let jeux = Game()
-jeux.welcome()
-jeux.initializeGame()
-jeux.fight()
+let party = Game()
+party.welcome()
+party.initializeGame()
+party.fight()
 

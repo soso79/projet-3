@@ -1,10 +1,10 @@
 class Weapon {
-    var degats: Int
+    var dammages: Int
     var name : String
     
     
-    init(name: String , degats: Int) {
-        self.degats = degats
+    init(name: String , dammages : Int) {
+        self.dammages = dammages
         self.name = name
         
       }

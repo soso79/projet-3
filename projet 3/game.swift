@@ -17,16 +17,17 @@ class Game {
         
     }
     func fight(){
-       
+       var counter = 0
        var fightingPlayer = players[0]
        var defendingPlayer = players[1]
         while players.count > 1{
+            if fightingPlayer === players[0]{
+                counter += 1
+            }
             let openChestProbability = arc4random_uniform(100)
-            
-            
             var target = GameCharacters(name:"")
             let combattant = fightingPlayer.selectCharacter()
-            // apparition d un coffre
+            // the chest appear
             if openChestProbability < 99 {
                 print ( """
                            ***********************************************************************
@@ -35,7 +36,7 @@ class Game {
                            ***********************************************************************
                            ***********************************************************************
                        """)
-                // le personnage ouvre son coffre
+                // Character open the chest
                 openChest(character: combattant)
                 
             }
@@ -44,7 +45,7 @@ class Game {
              let action = magicien.selectAction()
              if action == 1{
                 print("le magicien va attaquer")
-               // on va demander au joueur de selectionner un personage de l equipe adverse a attaquer //
+               // Choose an opponent to attack //
                 
             
                 
@@ -56,7 +57,7 @@ class Game {
                 
         }else if action == 2{
                 print(" le magicien va soigner")
-                // on va demander au joueur de selectionner un persoonage de son equipe a soigner //
+                // Choose your teamate to treat //
                 target = fightingPlayer.selectCharacter()
                 magicien.health(teamates: target)
                 print("\(combattant.name) a soigné \(target.name)")
@@ -82,13 +83,15 @@ class Game {
             print("le vainqueur est \(combattant.name)")
             let index = defendingPlayer.teamCharacters.index(where: {$0 === target})
             defendingPlayer.teamCharacters.remove(at: index!)
-            if(defendingPlayer.teamCharacters.count == 0){
-                print("le joueur 1 a gagné")
+        if(defendingPlayer.teamCharacters.count == 0){
+                print("le joueur \(fightingPlayer.playerNumber) a gagné")
                 let indexPlayer = players.index(where: {$0 === defendingPlayer})
                 players.remove(at: indexPlayer!);
-            }
+                print("Vous avez gagné en \(counter) tours")
+        }
             
         }
+            // swap value player[0] & player[1] between fightingPlayer  and defendingPlayer \\
           swap( &fightingPlayer,&defendingPlayer)
             
         }
@@ -99,21 +102,21 @@ class Game {
         switch character {
         case is Warrior:
             print("\(character.name) a trouvé une épée magique")
-            character.weapon = Weapon(name : "épée magique",degats: 35)
+            character.weapon = Weapon(name : "épée magique",dammages: 35)
         case is Magician:
             print("\(character.name) a trouvé une potion magique")
-            character.weapon = Weapon(name : "potion magique",degats: 28)
+            character.weapon = Weapon(name : "potion magique",dammages: 28)
         case is Colossus:
             print("\(character.name) a trouvé un marteau surpuissant")
-            character.weapon = Weapon(name : "marteau surpuissant",degats: 40)
+            character.weapon = Weapon(name : "marteau surpuissant",dammages: 40)
         case is Midget:
             print("\(character.name) a trouvé une hache destructrice")
-            character.weapon = Weapon(name : "hache destructrice",degats: 50)
+            character.weapon = Weapon(name : "hache destructrice",dammages: 50)
         default: break
             
         }
         }
-    
+     
 
         }
 
